@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Bienvenue sur mon super site trop bien de la mort qui tue
+{% endblock %}
+{% block body %}
+{% include "/partials/header.html.twig" %}
+<div class="container">
+	<div class="card text-white bg-secondary mt-3 mb-3" style="max-width: 100%;">
+		<div class="card-header">Bienvenue Sur nos Carnets D'adresse !</div>
+		<div class="card-body">
+			<h4 class="card-title">Nous vous permettons de mettre vos propres carnets d'adresse !</h4>
+			<p class="card-text">Si vous en avez un, n'hésitez pas à l'ajouter !
+			</p>
+			<button type="button" class="btn btn-primary">Voir les carnets d'adresse</button>
+		</div>
+	</div>
+
+	<h2 class="h1 mt-3 mb-4" >
+		Tous nos carnets d'adresse </h2>
+
+	<div class="row">
+		{% for ca in contacts %}
+		{# {% set url = path('ads_show', {'slug': ca.slug}) %} #}
+			<div class="col-md-4">
+				<div class="card bg-light mb-3">
+					<div class="card-header text-center">
+						{{ ca.prenom}} 
+						<strong>{{ca.nom}} </strong>
+						<br>
+						<small> numéro de téléphone : {{ca.numTel}}</small>
+					</div>
+					<a href="{{path('contact',{'id' : ca.id })}}">
+					<img src="{{ ca.avatar }}" alt="Image de l'apparement" style="height:200px; width:100%;display:block"></a>
+					</a>
+					<div class="card-body">
+						<h4 class="card-title">
+						<a href="{{path('contact',{'id' : ca.id })}}">
+							{{ ca.prenom}} {{ca.nom}}
+							</a>
+						</h4>
+						<p class="card-text">
+                            Réside à {{ca.ville}}						
+                        </p>
+                        <p> mail : {{ca.adresseMail}}  </p>
+						<a href="{{path('contact',{'id' : ca.id })}}" class"btn btn-secondary float-right">Afficher en détail</a>
+
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+</div>
+	</div>
+{% endblock %}

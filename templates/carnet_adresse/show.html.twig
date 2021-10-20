@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Bienvenue sur mon super site trop bien de la mort qui tue
+{% endblock %}
+{% block body %}
+{% include "/partials/header.html.twig" %}
+
+	<div class="ad-title" style="background-image: url({{ cont.avatar }})">
+		<div class="container">
+			<h1>{{cont.id}}</h1>
+			<p> {{cont.prenom}} {{cont.nom}}
+			</p>
+			<p class="h2">
+				<strong> {{cont.adresse}}</strong>
+			
+			</p>
+			<a href="" class="btn btn-primary">tadaa !</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mb-3">
+
+
+			
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col-4">
+						<img src="http://placehold.it/64x64" alt="Avatar de Joseph">
+					</div>
+					<div class="col">
+						<h3>Joseph Dupont</h3>
+						<span class="badge badge-primary">3 annonces</span>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium obcaecati eius fuga quidem nostrum temporibus culpa animi ut voluptas ratione!</p>
+				<p>Architecto sit at necessitatibus. Beatae ex culpa expedita, doloribus exercitationem quasi cupiditate soluta fugit reiciendis perferendis maxime reprehenderit natus eos?</p>
+				<p>Asperiores perferendis debitis possimus, vero maxime excepturi illum fugit enim odio nam numquam quae quos officiis voluptate cumque optio provident.</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
